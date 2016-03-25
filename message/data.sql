@@ -1,0 +1,10 @@
+
+--DROP TABLE `message` IF EXISTS;
+CREATE TABLE IF NOT　EXISTS `message` (
+    `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `username` VARCHAR(50) NOT NULL,
+    `email` VARCHAR(50) NOT NULL,
+    `content` TEXT NOT NULL,
+    `pubtime` INT UNSIGNED NOT NULL,
+    `face` TINYINT UNSIGNED NOT NULL
+);
