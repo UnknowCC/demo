@@ -57,7 +57,22 @@
             }
          ?>
     </div>
+    <div id="scorlltop" style="display:none;">
+        <a>
+            <img src="img/gotop.png" alt="回到顶部" />
+        </a>
+    </div>
     <script type="text/javascript" src='js/jquery.min.js'></script>
     <script type="text/javascript" src='js/message.js'></script>
+    <script type="text/javascript">
+        $(function(){
+            $(window).scroll(function(){
+                $(window).scrollTop() > 500 ? $("#scrolltop").fadeIn() : $('#scrolltop').fadeOut();
+            });
+            $('#scrolltop').click(function(){
+                $("html,body").animate({scrollTop:0});
+            });
+        });
+    </script>
 </body>
 </html>
