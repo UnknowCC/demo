@@ -16,6 +16,7 @@ define('CONFIG_PATH', ROOT.'config'.DS);
 defined('CONTROLLER_PATH') or define('CONTROLLER_PATH', ROOT.'controller'.DS);
 defined('MODEL_PATH') or define('MODEL_PATH', ROOT.'model'.DS);
 defined('VIEW_PATH') or define('VIEW_PATH', ROOT.'views'.DS);
+defined('PUBLIC_PATH') or define('PUBLIC_PATH', ROOT.'public'.DS);
 
 define('CORE_PATH', LIBRARY_PATH.'SScore'.DS);
 

@@ -33,10 +33,10 @@
                 </ul>
             </nav>
         </header>
-        <div>
+        
 
         <?php echo $content; ?>
-        
+
         <footer>
             <p>这是一个footer标签</p>
             <hr />

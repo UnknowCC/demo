@@ -15,7 +15,7 @@ class IndexController extends Controller
 
     public function login()
     {
-        echo 'login';
+        include (VIEW_PATH.'index/login.html');
     }
 
     public static function wrong()
