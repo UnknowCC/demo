@@ -4,8 +4,9 @@
 
 //exit();
 
-define('ROOT', dirname(__FILE__));
+
 define('DS', DIRECTORY_SEPARATOR);
+define('ROOT', ltrim(dirname(__FILE__), '/').DS);
 define('EXT', '.php');
 
 define('LIBRARY_PATH', ROOT.DS.'library'.DS);

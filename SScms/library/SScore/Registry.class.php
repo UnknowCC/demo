@@ -14,7 +14,7 @@ class Registry
     public static function instance($class)
     {
         if (! isset(self::$aliases[$class])) {
-            if (class_exists($class [, $autoload])) {
+            if (class_exists($class)) {
                 self::$aliases[$class] = new $class();
             } else {
                 throw ErrorException('class not exist :'.$class);

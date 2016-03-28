@@ -13,6 +13,9 @@ if (DEBUG) {
     error_reporting(0);
 }
 define('CONFIG_PATH', ROOT.'config'.DS);
+defined('CONTROLLER_PATH') or define('CONTROLLER_PATH', ROOT.'controller'.DS);
+defined('MODEL_PATH') or define('MODEL_PATH', ROOT.'model'.DS);
+defined('VIEW_PATH') or define('VIEW_PATH', ROOT.'views'.DS);
 
 define('CORE_PATH', LIBRARY_PATH.'SScore'.DS);
 
@@ -20,7 +23,7 @@ require_once(CORE_PATH.'Autoloader.class.php');
 
 spl_autoload_register("Autoloader::load");
 
-Autoloader::directory(LIBRARY_PATH);
+Autoloader::directory([ROOT, LIBRARY_PATH, CONTROLLER_PATH, MODEL_PATH]);
 
 set_exception_handler(array('SScore\\Error', 'exception'));
 set_error_handler(array('SScore\\Error', 'native'));

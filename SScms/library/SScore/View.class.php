@@ -14,7 +14,7 @@ class View
         if (is_array($name)) {
             $this->templateVar = array_merge($this->templateVar, $name);
         } elseif (! empty($value)) {
-            ArrayHandle::set($this->templateVar, $name, $value)
+            ArrayHandle::set($this->templateVar, $name, $value);
         }
     }
 
@@ -27,7 +27,7 @@ class View
 
     private function fetch($templateFile = '', $content = '')
     {
-        # code...
+        file_get_contents($templateFile);
     }
 
     private function render($content)
