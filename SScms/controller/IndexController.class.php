@@ -10,12 +10,12 @@ class IndexController extends Controller
 {
     public function index()
     {
-        include (VIEW_PATH.'index/index.html');
+        $this->display();
     }
 
     public function login()
     {
-        include (VIEW_PATH.'index/login.html');
+        $this->display();
     }
 
     public static function wrong()

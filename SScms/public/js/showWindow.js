@@ -1,9 +1,18 @@
 
 $(document).ready(function() {
+
+
+    function closeWindow() {
+
+        var thisModalID = $('.close').parent().attr('id');
+        $('#modalShade, #'+thisModalID).fadeOut();
+        $('#modalShade, .close').remove();
+    }
+
     $('a.modal').click(function() {
         var modalID = $(this).attr('rel');
-        $('#'+modalID).fadeIn().prepend('<a href="#" class="close"><img src="public/images/close_button.png" class="close_button" title="Close Window" alt="Close" /></a>');
-
+        $('#'+modalID).prepend('<a href="#" class="close"><img src="public/images/close_button.png" class="close_button" title="Close Window" alt="Close" /></a>').find('.close').click(closeWindow).end().fadeIn();
+        //alert($('#'+modalID).html());
         var modalMarginTop = ($('#' + modalID).height() + 80) / 2;
         var modalMarginLeft = ($('#' + modalID).width() + 80) / 2;
 
@@ -17,13 +26,15 @@ $(document).ready(function() {
         return false;
     });
 
-    $('a.close, #modalShade').live('click', function() {
-        var thisModalID = $('a.close').parent().attr('id');
-        $('#modalShade, #'.thisModalID).fadeOut(function() {
-            $('#modalShade, a.close').remove();
-        });
-        return false;
-    });
+
+
+    // $('a.close, #modalShade').live('click', function() {
+    //     var thisModalID = $('a.close').parent().attr('id');
+    //     $('#modalShade, #'.thisModalID).fadeOut(function() {
+    //         $('#modalShade, a.close').remove();
+    //     });
+    //     return false;
+    // });
 
     $('#penewuser').blur(function() {
         var newName = $(this).val();

@@ -1,0 +1,58 @@
+/*
+*{border:1px solid red;height:20px}
+所有的HTML5结构标签本质上来说就是一个div标签，只不过有意义
+*/
+/*页面头部 header*/
+header{height:150px;background:#ABCDEF}
+nav{height:30px;background:#ff9900;margin-top:100px;}
+nav ul li{width:100px;height:30px;float:left;line-height:30px}
+/*页面中间 div */
+div{margin-top:10px;height:1000px;}
+section{height:1000px;background:#ABCDEF;width:70%;float:left}
+article{background:#F90;width:500px;margin:0 auto;text-align:center}
+
+aside{height:1000px;background:#ABCDEF;width:28%;float:right}
+/*页面底部 footer*/
+footer{height:100px;background:#ABCDEF;clear:both;margin-top:10px}
+
+#modalShade {
+    display: none;
+    background: #3B3013;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.loadModal {
+    display: none;
+    background: #FDF3C1;
+    color: #000000;
+    padding: 20px;
+    border: 20px solid #8F6031;
+    float: left;
+    font-size: 1.2em;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 200;
+}
+.searchModal {
+    height: 150px;
+    width: 550px;
+}
+
+.registerModal {
+    height: 375px;
+    width: 625px;
+}
+.loginModal {
+    height: 175px;
+    width: 300px;
+}
+img.close_button {
+	float: right;
+    margin: -55px -55px 0px 0px;
+    border: none;
+}

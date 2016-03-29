@@ -1,40 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <style>
-            /*
-            *{border:1px solid red;height:20px}
-            所有的HTML5结构标签本质上来说就是一个div标签，只不过有意义
-            */
-            /*页面头部 header*/
-            header{height:150px;background:#ABCDEF}
-            nav{height:30px;background:#ff9900;margin-top:100px;}
-            nav ul li{width:100px;height:30px;float:left;line-height:30px}
-            /*页面中间 div */
-            div{margin-top:10px;height:1000px;}
-            section{height:1000px;background:#ABCDEF;width:70%;float:left}
-            article{background:#F90;width:500px;margin:0 auto;text-align:center}
-
-            aside{height:1000px;background:#ABCDEF;width:28%;float:right}
-            /*页面底部 footer*/
-            footer{height:100px;background:#ABCDEF;clear:both;margin-top:10px}
-
-            .searchModal {
-                display: none;
-                background: #FDF3C1;
-                color: #000000;
-                padding: 20px;
-                border: 20px solid #8F6031;
-                float: left;
-                font-size: 1.2em;
-                position: fixed;
-                height: 150px;
-                width: 550px;
-                top: 50%;
-                left: 50%;
-                z-index: 200;
-            }
-        </style>
+        <link rel="stylesheet" href="public/css/main.css">
     </head>
     <body>
         <header>
@@ -47,17 +14,21 @@
                     <li>商城</li>
                     <li>社区</li>
                 </ul>
-                <a href="search.php" rel="searchWindow" class="modal" id="search"><span>搜索</span></a>
-                <a href="register.php" rel="registerWindow" class="modal" id="register"><span>注册</span></a>
-                <a href="login.php" rel="loginWindow" class="modal" id="login"><span>登录</span></a>
+                <a href="search.html" rel="searchWindow" class="modal" id="search"><span>搜索</span></a>
+                <a href="register.html" rel="registerWindow" class="modal" id="register"><span>注册</span></a>
+                <a href="login.html" rel="loginWindow" class="modal" id="login"><span>登录</span></a>
             </nav>
-            <div id="searchWindow" class="searchModal">
-                <h2>搜索</h2>
+            <div id="searchWindow" class="searchModal loadModal">
+            <!--     <h2>搜索</h2>
                 <form name="search" action="search.php" method="post">
                     <label for="pesearch">关键字</label>
                     <input type="search" name="pesearch" id="pesearch" size="32">
                     <input type="submit" value="搜索">
-                </form>
+                </form> -->
+            </div>
+            <div id="registerWindow" class="registerModal loadModal">
+            </div>
+            <div id="loginWindow" class="loginModal loadModal">
             </div>
         </header>
         <div>
@@ -156,7 +127,8 @@
             <small>商户合作</small>
         </footer>
         <script src="public/js/jquery-1.12.2.min.js"></script>
-        <script src="public/js/showWindow.js"></script>
+        <!-- <script src="public/js/showWindow.js"></script> -->
+        <script src="public/js/loadWindow.js"></script>
     </body>
 
 </html>

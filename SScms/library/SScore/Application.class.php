@@ -12,7 +12,7 @@ class Application
     {
         // 路由解析
         $response = Uri::detect();
-        echo $response;
+        //echo $response;
         // 实例化控制器
     }
 }

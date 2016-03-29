@@ -17,7 +17,7 @@ class Error
             <h1>Uncaught Exception</h1>
             <p><code>{$e->getMessage()}</code>
             <h3>Origin</h3>
-            <p><code>{substr($->getFile(), strlen(ROOT))}--on line--{$e->getLine()}</code></p>
+            <p><code>{$e->getFile()}--on line--{$e->getLine()}</code></p>
             <h3>Trace</h3>
             <pre>{$e->getTraceAsString()}</pre>
             </section>

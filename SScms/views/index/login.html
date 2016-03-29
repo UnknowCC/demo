@@ -1,5 +1,25 @@
 
-<section>
+<a href="#" class="close"><img src="public/images/close_button.png" class="close_button" title="Close Window" alt="Close" /></a>
+    <h2>Login</h2>
+    <form name="login" action="inc/peregister.php" method="post">
+        <label class="label" for="pename">用户名: </label>
+        <input type="text" name="pename" id="pename" size="24" />
+        <br />
+        <label class="label" for="pepass">密码: </label>
+        <input type="password" name="pepass" id="pepass" size="24" />
+        <br />
+        <input type="checkbox" name="remember" id="remember" value="remember" />
+        <span class="modalNote">记住我</span>
+        <input type="hidden" name="formName" value="login" />
+        <label class="label">&nbsp;</label>
+        <input type="submit" value="登录" />
+        <input type="reset" value="重置" />
+    </form>
+
+
+
+
+<!-- <section>
     <div class="login">
         <form class="" action="" method="post" autocomplete="off">
             <h2>欢迎注册</h2>
@@ -25,8 +45,4 @@
             </p>
         </form>
     </div>
-</section>
-
-<script type="text/javascript">
-    document.getElementById('username')
-</script>
+</section> -->

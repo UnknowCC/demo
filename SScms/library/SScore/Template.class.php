@@ -86,7 +86,7 @@ class Template
      * @param  string $content 模板文件内容
      * @return string
      */
-    private function tplReplace($content)
+    public static function tplReplace($content)
     {
         /* 转义编译定界符 */
         $left = preg_quote($this->leftDelimiter, '/');
