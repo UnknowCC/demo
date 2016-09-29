@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#method {
+			margin-right: 10px;
+			float: left;
+			width: 102px;
+			height: 32px;
+			padding: 6px 10px;
+		}
+		#header {
+			width: 450px;
+			padding: 7px 10px;
+			height: 15px;
+
+		}
+		.send {
+			height: 31px;
+			font-size: 15px;
+			line-height: 31px;
+			cursor: pointer;
+			border: 1px solid #35a6e8;
+			background: #35a6e8;
+			color: #fff;
+		}
+		.add-param {
+			width: 60px;
+			height: 30px;
+			line-height: 30px;
+			font-size: 15px;
+			border: 1px solid #7ba316;
+			background: #8ec31d;
+			color: #fff;
+			padding-left: 30px;
+			padding-right: 30px;
+			display: inline-block;
+			text-align: center;
+			cursor: pointer;
+		}
+		table {
+			width: 70%;
+		}
+		th {
+			font-weight: 400;
+			padding: 12px 0;
+			background: #e9e9e9;
+			border: 1px solid #cecece;
+			padding: 10px;
+		}
+		td {
+			width: 365px;
+			padding: 12px 0;
+			border: 1px solid #cecece;
+		}
+		input {
+			padding: 7px 10px;
+			height: 16px;
+			width: 160px;
+		}
+	</style>
+</head>
+<body>
+
+<div id="name"></div>
+	<script src="jquery.js">
+	</script>
+
+	<h2>=================================</h2>
+	<div>
+		<h1>API调试</h1>
+		<div>
+			<select id="method">
+				<option value="GET">GET</option>
+				<option value="POST">POST</option>
+				<option value="OPTIONS">OPTIONS</option>
+				<option value="PUT">PUT</option>
+			</select>
+			<input style="width:250px" id="header" name="control" type="text" value="http://127.0.0.1/mobile/index.php?">
+			<input style="width:100px" type="text" id="act" value="">
+			<input style="width:100px" type="text" id="op" value="">
+			<button class="send" onclick="send()">发送</button>
+		</div>
+		<table class="params-table">
+			<tr>
+				<th>Key</th>
+				<th>Value</th>
+			</tr>
+			<tr class="key-value">
+				<td>
+					<input name="key" type="text" placeholder="参数名" value="key">
+				</td>
+				<td>
+					<input name="value" type="text" placeholder="参数值" value="ee1442ccda5fd6cd8e48b2931e0ec0d3">
+					<button class="del" onclick="delparam(this)">删除</button>
+				</td>
+			</tr>
+		</table>
+		<span class="add-param">添加</span>
+	
+	</div>
+	<div class="alipay"></div>
+	<h2>=================================</h2>
+	<script>
+		
+		function send() {
+			var url = $("#header")[0].value + 'act=' + $("#act")[0].value + '&op=' + $('#op')[0].value;
+			var method = $('#method').val();
+			var params = getParams();
+			console.log(params);
+			$.ajax({
+				url: url,
+				type: method,
+				dataType: 'JSON',
+				data: params,
+				success: function(data) {
+					$(data).appendTo($('.alipay'));
+					console.log(data);
+				}
+			});
+		}
+		
+		function getParams() {
+			var params = $('table input');
+			var midlength = params.length;
+			var paramsArr = [];
+			var paramsStr = '';
+			for (var i = 0; i < midlength; i+=2) {
+				if (params[i].value == '') {
+					continue;
+				}
+				paramsStr += params[i].value + '=' + params[i+1].value+'&';
+			}
+			paramsStr = paramsStr.substr(0, paramsStr.length - 1);
+			return paramsStr;
+			
+		}
+	</script>
+	<script>
+		$('.add-param').on('click', function() {
+			var temple = '<tr class="key-value"><td><input name="key" type="text" placeholder="参数名"></td><td><input name="value" type="text" placeholder="参数值"><button class="del" onclick="delparam(this)">删除</button></td></tr>';
+			$(temple).appendTo($('.params-table'));
+		});
+		function delparam(e) {
+			$(e).parent().parent().remove();
+		}
+	</script>
+</body>
+</html>
